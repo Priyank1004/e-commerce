@@ -1,0 +1,144 @@
+/* NavBar Css */
+
+.nav-ul {
+    background-color: skyblue;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+}
+
+.nav-ul li {
+    display: inline-block;
+    padding: 22px;
+}
+
+.nav-ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 8px;
+}
+
+.nav-ul li a:hover {
+    color: blueviolet;
+}
+
+.nav-right{
+    text-align: right;
+}
+.nav-logo{
+    padding-left: 20px;
+}
+.nav-logo img{
+    border-radius: 4px;
+}
+/* Nav bar css End */
+
+/* Signup Page Css */
+
+.signup_container {
+    margin: 0 auto;
+    width: 400px;
+    display: block;
+    text-align: center;
+}
+
+.inputbox {
+    width: calc(100% - 10px);
+    padding: 8px 0px 8px 8px;
+    margin: 8px 0px;
+    border: 1px solid #d7d7d7;
+    border-radius: 2px;
+    font-size: 14px;
+}
+
+.signupBtn, .Addproduct {
+    padding: 8px;
+    border: none;
+    width: 100%;
+    background-color: skyblue;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+.loginLink{
+    padding-top: 12px;
+}
+
+/* Signup page css end */
+
+/* Login Page Css */
+.login{
+    margin: 0 auto;
+    width: 400px;
+    display: block;
+    text-align: center;
+}
+.login_form input{
+    width: calc(100% - 10px);
+    padding: 8px 0px 8px 8px;
+    margin: 8px 0px;
+    border: 1px solid #d7d7d7;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* Login Page Css end*/
+
+.footer {
+    text-align: center;
+    background-color: skyblue;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* ADD Product Page design */
+
+.input_error{
+    color: red;
+    text-align: left !important;
+}
+
+.product_container{
+    width: 40%;
+    margin: 0 auto; 
+}
+/* ADD Product Page design END */
+
+/* Product Page design */
+.product_tabel{
+    width: 80%;
+    margin: 0 auto;
+}
+.product_tabel table{
+    margin-top: 28px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.updateBTN a{
+    color: black;
+    text-decoration: none;
+}
+
+.product_tabel table thead th{
+    border: 1px solid #d7d7d7;
+    background-color: skyblue;
+}
+
+.product_tabel table tbody td{
+    border: 1px solid #d7d7d7;
+    padding: 4px;
+}
+
+.serachproduct{
+    width: 30%;
+    height: 32px;
+    border-radius: 4px;
+    border: 1px solid #d7d7d7;
+    padding-left: 8px;
+}

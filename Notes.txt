@@ -1,0 +1,7 @@
+for reslove the error of api call in frontend
+
+npm i cors 
+
+For JWT Token
+
+npm i jsonwebtoken
