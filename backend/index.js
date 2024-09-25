@@ -4,7 +4,6 @@ const cors = require('cors');
 const app = express();
 const User = require('./db/User');
 const Products = require('./db/Product');
-const Product = require('./db/Product');
 const Jwt = require("jsonwebtoken");
 const jwtKey = 'e-comm';
 
@@ -17,13 +16,15 @@ app.post("/register", async (req, res) => {
     let user = new User(req.body);
     let result = await user.save();
     result = result.toObject();
+
     Jwt.sign({ result }, jwtKey, { expiresIn: "2h" }, (err, token) => {
         if (err)
             res.send({ result: "Wrong Token" })
         res.send({ result, auth: token });
-    })
+    });
+
     delete result.password;
-    console.log(result);
+    // console.log(result);
 });
 
 
