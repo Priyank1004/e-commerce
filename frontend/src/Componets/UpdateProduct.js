@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 const UpdateProduct = () => {
@@ -8,21 +8,22 @@ const UpdateProduct = () => {
     const [category, setCategory] = useState("");
     const [company, setCompany] = useState("");
     const [error, setError] = useState(false);
-    const params = useParams();
+    const { id } = useParams();
     const navigate = useNavigate();
 
-    useEffect(() => {
-        getProductDetails();
-    },[])
-    const getProductDetails = async () => {
-        let result = await fetch(`http://localhost:5000/product/${params.id}`);
-        console.log(params);
-        result = await result.json();   
+    const getProductDetails = useCallback(async () => {
+        let result = await fetch(`http://localhost:5000/product/${id}`);
+        console.log(id);
+        result = await result.json();
         setName(result.name);
         setPrice(result.price);
         setCategory(result.category);
         setCompany(result.company);
-    }
+    }, [id]);
+
+    useEffect(() => {
+        getProductDetails();
+    }, [getProductDetails])
 
     const UpdateProductHandler = async () => {
         console.log( name, price, category, company )
@@ -32,7 +33,7 @@ const UpdateProduct = () => {
             return false;
         }
 
-        let response = await fetch(`http://localhost:5000/product/${params.id}`, {
+        let response = await fetch(`http://localhost:5000/product/${id}`, {
             method: "PUT",
             body: JSON.stringify( { name, price, category, company }),
             headers: {
